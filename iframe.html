@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title></title>
+</head>
+	<script type="text/javascript">
+		window.onload = function(){
+			var messageEle = document.getElementById("messageEle");
+			function receiveMessage (e) {
+				//if(event.origin !== 'ifram_test.html')
+				//	return;
+				messageEle.innerHTML = "Message Received: " + e.data;
+			}
+			window.addEventListener('message', receiveMessage);
+		}
+	</script>
+<body>
+<h1>Show Message</h1>
+<div id="messageEle">here</div>
+</body>
+</html>

@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Iframe Test</title>
+	<script type="text/javascript">
+	window.onload = function(){
+		var myframe = document.getElementById('myframe').contentWindow;
+		function sendMsg(e){
+			e.preventDefault();
+	 		myframe.postMessage('BEE', '*');
+	 	}
+	 	var btn = document.getElementById('btn');
+	 	btn.addEventListener('click', sendMsg);
+	}
+	 	
+	</script>
+</head>
+<body>
+<h1>This is parent</h1>
+<input id="btn" type="submit">
+<br>
+<br>
+<iframe name="myframe" id="myframe" src="iframe.html" height="500"></iframe>
+</body>
+</html>
